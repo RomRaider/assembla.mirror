@@ -1,0 +1,354 @@
+                      - Enginuity 0.4.2 Beta -
+            Open-Source ECU Tuning -- www.enginuity.org
+
+
+PLEASE MAKE SURE TO READ RELEASE _NOTES.TXT_ EACH TIME YOU DOWNLOAD
+A NEW VERSION OF ENGINUITY. IMPORTANT NOTICES, KNOWN ISSUES AND
+NEW FEATURES WILL BE DISCUSSED.
+
+Enginuity is a full featured Engine Control Unit editing application 
+for tuning virtually any manufacturer, meant to be used in conjuction
+with ECU flash and dump utilities. Enginuity will give you full 
+control over timing, fuel, boost and many other parameters in your 
+ECU, competing with very expensive and proprietary software. Enginuity 
+will remove your need for piggyback systems designed to control these 
+functions, and, in most cases, work as well as or better than any 
+stand alone engine management. Reflashing your stock ECU also has the 
+added benefit of a manufacturer tested base map, giving you top notch 
+performance and saving time tuning idle and low throttle applications
+while retaining all of the benefit of the research and development
+manufacturer's spend millions of dollars on.
+
+Enginuity is currently in BETA TEST status, meaning it is not 
+thoroughly tested and not intended for use by inexperienced users. In 
+addition to being incomplete and untested, only experienced tuners 
+with the required tools (ie, wideband oxygen sensor) should modify an 
+ECU image. As with any engine management, changes could result in 
+severe engine damage. Use at your own risk.
+
+Documentation is available at http://wiki.enginuity.org and the
+official Enginuity FAQ can be found at
+http://www.enginuity.org/about444.html. Please be aware that as 
+Enginuity is still in beta status and changing frequently, 
+documentation may be incomplete or out of date.
+
+
+
+-----------------------------
+- 0.4.1b Notes (2/8/2007) -
+-----------------------------
+This release includes a couple minor fixes to the tuning interface and
+major enhancements to the datalogger.
+
+
+
+-----------------------
+- 0.4.1b Known Issues -
+-----------------------
+- 3d graph
+  - Java3d over most VNC implementations will show a blank JFrame
+  - You MUST have up to date graphics drivers that support OpenGL 1.2 
+  - Expect ~200 megs of usage when using 3d graphing
+  - Expect possible memory leaks when using 3d graphing
+  - There are some problems with cell selection in 3d graphs
+  - Numerical interpolation can take some time on slower machines
+- Other
+  - File associations will work only in Windows systems
+
+
+
+--------------
+- Change Log -
+--------------
+
+0.4.1b (2/8/2007)
+-----------------
+
+--- Tuning ---
+- Fix frame sizes too small on 2d tables 
+- Fix switch tables displaying wrong icon in table tree 
+
+--- Datalogging ---
+- Autoconnect 
+- Reset, disconnect buttons 
+- Reset data buttons per tab 
+- Updated dash tab with warning levels (warning levels not currently
+  saved to profile) 
+- Fixed "Manifold Relative Pressure (Corrected)" parameter
+- Fixed profile save/load problems
+- ECU id display in status bar 
+- Updated address format in logger.xml (length attribute added to
+  replace multiple <byte> tags. length defauilts to 1 if not specified) 
+- Autodetection of ecu specific parameters via new <ecuparam> tags in
+  logger.xml (IAM, engine load)
+- ECU connection status indicator added to interface (stopped, 
+  connecting, reading data, logging to file) 
+- Auto filtering of parameter list based on ECU init response (should 
+  only display now what your car says it supports) 
+- Enable defogger switch based file logging via menu bar (don't need to 
+  select it in switch list anymore) 
+- Defogger switch is only logged to file when explicitly enabled
+- Absolute timestamp option added for file logging
+- Relative timestamp now reset to zero at the beginning of each log file
+  (unless absolute timestamp is selected) 
+- Graph tab color scheme updated 
+- Enhancements to the map overlay feature, including display of the live 
+  data and overlay of the live data values on the map cells.
+- Tooltips added to parameter list showing parameter description (not all
+  parameters have a description yet though)
+- General logger parameter updates/additions
+
+
+0.4.0b (11/10/2006)
+-------------------
+- Add file associations
+- Ability to view (but not modify) tables above userlevel
+- Add link to latest ECU definitions
+- Fix switch (CEL fix) inheritance
+- Fix table ordering in child ROMs
+- Fix table level display in property panel
+- Fix label fonts on 3D tables
+- Logging
+- 3D graphing
+- Interpolating (map smoothing)
+
+
+0.3.2b (8/12/2006)
+------------------
+- Installer/Shortcuts
+- Add status bar
+- Add support for hex ID strings for Mitsubishi support
+- Fix goofy behavior of increase/decrease at limits
+- Add multiply values function
+- Improve exception handling in XML parser
+- Add lockable tables via ECU definitions
+- Rearrange 3D table labels
+- Improve datacell colorize method
+- Add limits to table values in XML
+- Fix exiting through menu not saving settings
+- Add ECU Definition Manager
+
+
+0.3.1b (7/11/2006)
+------------------
+- Change year attribute to string from int
+- Fix incrementing in compare mode 
+- Fix refresh tables working improperly with multiple ROMs open 
+- Update table property panel
+- Fix float values not incrementing properly in axiis
+- Fix values not incrementing if increment amount is less than LSB
+- Add option whether to display tables higher than userlevel
+- Add option whether to save changes made to debug tables
+- Fix clicking on ROM tree opening/closing wrong tables
+- Fix switch tables not compensating for RAM
+- Fix many memory leak problems
+- List tables above userlevel, but disabled
+- Color debug tables red
+- Add "version" tag to settings
+- Show release notes on first run
+- Remove unnecessary variables from settings XML
+- Add name and description to CEL/checksum fix tables
+- Fix "(null)" text on static 2D axiis
+- Remove table name from bottom of 2D table
+- Allow single clicking to open tables (via settings)
+- Add fine adjustment values to ECU definition
+- Fix map copy/paste
+- Increment affects real instead of binary value
+- User levels
+- Fix definition parser rounding incrementby values
+- Improve table properties display
+- Fix byte/real conversion validation
+
+
+0.3.0b (7/2/2006)
+---------------------------------------
+- Finish map comparing implementation
+
+
+0.2.93a Private Test Release (7/1/2006)
+---------------------------------------
+- Added "switch" table type
+
+
+0.2.92a Private Test Release (7/1/2006)
+----------------------------------------
+- Fixed squares appearing instead of some float values
+- Fixed exception when entering decimals in coarse value
+- Fixed set value field being cast to integer instead of decimal
+- Fixed progress bar not closing on errors
+- Pressing "." now focuses set value field
+
+
+0.2.91a Private Test Release (6/30/2006)
+----------------------------------------
+- Fixed memory usage issues
+- Added performance and other memory optimizations
+
+
+0.2.90a Private Test Release (6/30/2006)
+----------------------------------------
+- Added 32-bit ECU (float) support
+
+
+0.2.7.4b (5/09/2006)
+--------------------
+- Fixed 16-bit 3D tables saving improperly
+- Added compare to original value function
+
+
+0.2.7.3b (4/17/2006)
+--------------------
+- Fix border colors not showing changes from keyboard
+- Add progress indicators
+- Remove table definition generator
+- Fix refresh button closing images with same filename
+- Fix border/background of static axiis
+- Fix rounding problems causing false conflicts for conversion expressions
+- Fix set value not updating borders
+- Reset default settings option
+- Fix cell border not saving 
+- Improve warning messages
+- Fix ECU definition file settings not saving
+- Fix last image directory resetting
+- Fix updated cell border not updating
+
+
+0.2.7.2b (4/12/2006)
+--------------------
+- Fixed close all images
+
+
+0.2.7.1b (4/12/2006)
+--------------------
+- Fixed ECU definitions not saving
+- Fixed last image directory not saving
+- Fixed colors not saving
+- Fixed increased/decreased cell borders not updating
+
+
+0.2.7b (4/12/2006)
+------------------
+- Replace serialized settings object with XML
+- Settings panel
+- Custom sizes/fonts/colors for tables
+- Fix blue 2D table axiis
+- Fix exception when clicking on table list
+- Expression/to_byte conflict warning
+- Rename packages to conventional lowercase
+- Improve refresh method when saving
+- Improve exception reporting
+- Implement "obsolete" tag -- set up wiki with ROM revision info
+- Group tables by category
+- Fix descriptions not working
+- Fix 2D table navigation
+
+
+0.2.6b (4/5/2006)
+-----------------
+- Shortcut keys
+- Improve display of tables too large for window (MDI)
+- Improve exception reporting
+- Improve saved window position on exit (panel size, maximized)
+- Remove "copy" from table menu -- its in the edit menu
+- Fix vertical overhead on table size for new graphical buttons
+- Fix rounding issues with set value
+- Fix ctrl-click on tables  
+- Resize cells to make best use of screen
+- Prevent simultaneous selection of axiis and table values 
+- Map copying
+- Graphical icons
+- Cascade windows (MDI)
+- Fix table frame JScrollPane (MDI)
+
+
+0.2.5b (3/28/2006)
+------------------
+- Import tables by single address
+- Refresh image button
+- Table properties
+- Add "obsolete" tag for images with more recent revisions
+- Fix application not closing files after reading
+- Add file extensions to open/save dialog (HEX, BIN)
+- Fix parser searching by XML ID instead of internal storage ID
+- Image properties
+- Show positive (red) and negative (blue) value changes on tables
+BUG FIXES:
+- Decrement (fine) increments
+- Files not closing after being read
+- Set value rounds goofy
+- 1D tables not colorizing properly
+- 2D tables not working properly
+- Set value field shows negative numbers
+
+
+0.2.4a (3/21/2006)
+------------------
+- "Base" attribute for extending/duplicating tables
+- "Omit" attribute not required to omit tables -- just set storageaddress to "0"
+- Fine and coarse adjustment of values
+- Direct value input
+- Support for ROMs with or without RAM sectors
+
+
+0.2.3a (2/27/2006)
+------------------
+- ECU definitions including each other (endless loop) is now handled
+- "Omit" attribute allows incomplete tables to be removed from inheriting definitions
+- Nested includes (includes more than 1 definition deep) tested and working properly
+
+
+0.2.2a (2/26/2006)
+------------------
+- Include support in XML definitions (exception handling not yet implemented!)
+
+
+0.2.1a (2/13/2006)
+------------------
+- Handles storage addresses that are out of range
+- Fixed conflicting parent/child table sizes (done) 
+- Replaced "<Table Name>" menu with "Table" -- makes it more obviously a menu
+- Fixed 3D table sizing problem
+- Fixed colorizing exception
+- Fixed backwards endians
+- Fixed storage address out of range exception
+- Improved close image method
+
+
+.20a (2/11/2006)
+----------------
+-Completely rewritten
+-XML ECU definitions
+-View multiple images and tables
+
+
+.14a (11/26/2005)
+------------------
+-Improved axis cell modification
+-Fixed absolute value calculations
+
+.13a
+-----
+-Revised text entry of values
+-Added EUDM WRX support
+-Improved multiple cell selection
+-Improved axis cell modification
+-Axis cell changes can be saved
+
+Supported ECU Versions/Version Added - Deprecated as of version .20a. ECU versions are now defined in ecu_defs.xml.
+----------------------
+2004/2005 USDM WRX:
+-A4TF300E .13a
+-A4TF400E .13a
+-A4TF800E .13a
+-A4TF500F .13a
+-A4TF510F .13a
+-A4TF800F .13a
+
+2002/2003 USDM WRX:
+-A4TC300L .13a
+-A4SGC00C .13a
+-A4SGD10C .13a
+-A4SG900C .13a
+
+2003 EUDM WRX:
+-A4TE001G .13a
